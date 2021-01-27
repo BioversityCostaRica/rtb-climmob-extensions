@@ -1,0 +1,11 @@
+{% extend_me %}
+
+{% block ajax_post_extra %}
+"co_term_id":$("#co_term_id").val(),
+{% endblock ajax_post_extra %}
+
+{% block library_function_open_questions_extra %},co_term_id{% endblock library_function_open_questions_extra %}
+
+{% block function_open_questions_extra_field %}
+$("#co_term_id").val(co_term_id);
+{% endblock function_open_questions_extra_field %}

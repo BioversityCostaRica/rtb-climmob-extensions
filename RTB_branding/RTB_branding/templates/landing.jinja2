@@ -1,0 +1,66 @@
+{% extend_me %}
+
+{% block title %}
+        <title>{{ _("Welcome to ClimMob for RTB") }}</title>
+{% endblock title %}
+
+{% block carousel %}
+    <div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            {% block carouselitems %}
+                <div class="item active">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>{{ _("Welcome to ") }}<span style="color: #1ab492">{{ _('ClimMob for RTB') }}</span><br/></h1>
+                            <p>{{ _("Design and analyse agricultural trials in a") }} <span style="color: #1ab492">{{ _("smart way") }}.</span></p>
+                        </div>
+                    </div>
+                    <!-- Set background for slide in css -->
+                    <div class="header-back" style="background: url({{ request.url_for_static('banner_rtb.jpg', 'rtb') }}) 50% 0 no-repeat;"></div>
+
+                </div>
+            {% endblock carouselitems %}
+        </div>
+        <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">{{ _("Previous") }}</span>
+        </a>
+        <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">{{ _("Next") }}</span>
+        </a>
+    </div>
+{% endblock carousel %}
+
+{% block contact_address %}
+    <strong><span class="navy">Alliance Bioversity-CIAT<br/>Costa Rica</span></strong><br/>
+    c/o CATIE 7170<br/>
+    Turrialba, Costa Rica<br/>
+    <abbr title="Phone">P:</abbr> (+506) 2556 2431
+{% endblock contact_address %}
+
+{% block contact_social %}
+    <p class="m-t-sm">
+        {{ _("Or follow us on social media") }}
+    </p>
+    <ul class="list-inline social-icon">
+        <li><a target="blank" href="https://twitter.com/RTB_CGIAR"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li><a target="blank" href="https://www.facebook.com/rtbcgiar/"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li><a target="blank" href="https://www.linkedin.com/company/rtbcgiar/"><i class="fa fa-linkedin"></i></a>
+        </li>
+    </ul>
+{% endblock contact_social %}
+
+{% block contact_footer %}
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+            <strong>{{ _("Copyright") }}</strong> {{ _("2021, Alliance of Bioversity International and CIAT") }}
+            <br/>{{ _('Version') }}: {{ request.h.get_version() }}
+        </div>
+    </div>
+{% endblock contact_footer %}
